@@ -1,0 +1,188 @@
+﻿<Window x:Class="MyFirstApp.CalculatorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyFirstApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Background="SlateGray">
+        <StackPanel
+            Orientation="Horizontal"
+            HorizontalAlignment="Center"
+            Background="SlateGray">
+            <Image
+                    Width="100"
+                    Height="100"
+                    Source="Images/calculator-outline-filled.png"/>
+            <StackPanel
+            Orientation="Vertical"
+                Background="SlateGray"
+            HorizontalAlignment="Center">
+                <Label 
+            Content="The Calcuator" 
+            HorizontalAlignment="Left" 
+            Margin="20,44,0,0" 
+            VerticalAlignment="Top" 
+            VerticalContentAlignment="Center"
+            HorizontalContentAlignment="Center"
+            RenderTransformOrigin="0.5,0.5" 
+            Width="201" 
+            Height="27"
+                    FontWeight="Bold"
+                    FontSize="14">
+                    <Label.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-17.394"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Label.RenderTransform>
+                </Label>
+                <Button
+                    x:Name="ButtonHelp"
+                    Content="Help"
+                    Margin="0,30,0,0"
+                    Width="50"
+                    Height="30" Click="ButtonHelp_Click"
+                    Background="LightGreen"/>
+                <TextBlock 
+                TextAlignment="Center"
+                x:Name ="TextBlock_UserFeedback"
+                Margin="0,10,0,10"
+            />
+                <StackPanel
+                Orientation="Horizontal"
+                HorizontalAlignment="Left"
+                Margin="50,0,0,0">
+                    <TextBlock FontWeight="DemiBold">
+                    Operand 1
+                    </TextBlock>
+                    <TextBox
+                    Width="100"
+                Name="Operand1"
+                    TextChanged="Operand_TextChanged">
+                    </TextBox>
+                </StackPanel>
+                <StackPanel
+                Orientation="Horizontal"
+                Margin="50,0,0,0">
+                    <TextBlock FontWeight="DemiBold">
+                    Operand 2
+                    </TextBlock>
+                    <TextBox
+                    Width="100"
+                Name="Operand2"
+                    TextChanged="Operand_TextChanged">
+                    </TextBox>
+                </StackPanel>
+                <StackPanel
+                Orientation="Horizontal"
+                    Margin=" 0,10,0,10">
+                    <Button
+                    x:Name="ButtonAdd"
+                    Content="Add"
+                    Width="50"
+                    Height="30" Click="ButtonOperator_Click"
+                        Background="SteelBlue"/>
+                    <Button
+                    x:Name="ButtonSubtract"
+                    Content="Subtract"
+                    Margin="10,0,0,0"
+                    Width="50"
+                    Height="30" Click="ButtonOperator_Click"
+                        Background="SteelBlue"/>
+                    <Button
+                    x:Name="ButtonDivide"
+                    Content="Divide"
+                    Margin="10,0,0,0"
+                    Width="50"
+                    Height="30" Click="ButtonOperator_Click"
+                        Background="SteelBlue"/>
+                    <Button
+                    x:Name="ButtonMultiply"
+                    Content="Multiply"
+                    Margin="10,0,0,0"
+                    Width="50"
+                    Height="30" Click="ButtonOperator_Click"
+                        Background="SteelBlue"/>
+                </StackPanel>
+                <StackPanel
+                Orientation="Horizontal"
+                HorizontalAlignment="Center">
+                    <TextBox
+                Width="100"
+                Height="50"
+                Name="Answer" IsEnabled="False"/>
+                </StackPanel>
+                <Button 
+                    x:Name="Button_ClearButton"
+                    Width="100"
+                    Height="30"
+                    Margin="5,15,0,0"
+                    Content="Clear" 
+                    HorizontalAlignment="Center" 
+                    Click="Button_ClearButton_Click"
+                    Background="LightGreen"></Button>
+                <Button 
+                    x:Name="Button_ExitButton"
+                    Width="100"
+                    Height="30"
+                    Margin="10"
+                    Content="Exit" 
+                    HorizontalAlignment="Center" 
+                    Click="Button_ExitButton_Click"
+                    Background="OrangeRed"/>
+            </StackPanel>
+            <StackPanel
+            Orientation="Vertical"
+            HorizontalAlignment="Center"
+                Margin="50,0,0,0">
+                <TextBlock 
+                    Text=""
+                    >
+                </TextBlock>
+            </StackPanel>
+            <StackPanel
+            Orientation="Vertical"
+            HorizontalAlignment="Center"
+                Margin="10,0,0,0">
+                <StackPanel
+                    Orientation="Horizontal"
+                    Margin="0,20,0,0">
+                    <RadioButton
+                        x:Name="DegreesButton"
+                        Content="Degrees"
+                        Checked="RadioButton_Checked">
+                    </RadioButton>
+                    <RadioButton
+                        x:Name="RadiansButton"
+                        Content="Radians"
+                        Checked="RadioButton_Checked">
+                    </RadioButton>
+                    <ComboBox
+                        x:Name="ComboBoxRoundOrExact" SelectionChanged="ComboBoxRoundOrExact_SelectionChanged"
+                       Margin="0,0,0,10" Width="135" >
+                        <ComboBoxItem
+                            Content="Rounded to Decimal"
+                            IsSelected="True"></ComboBoxItem>
+                        <ComboBoxItem
+                            Content="Exact, using Pi"></ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+                <StackPanel
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center">
+                    <TextBox
+                        Width="135"
+                        Name="DegreesRadiansBox"
+                        TextChanged="Operand_TextChanged"
+                        Margin="120,0,0,0"/>
+                    <TextBlock
+                        x:Name="TextBlock_PiDisplay"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
