@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 namespace MyFirstApp
 {
     /// <summary>
-    /// Interaction logic for Window1.xaml
+    /// Interaction logic for CalculatorWindow.xaml
     /// </summary>
     public partial class ValidationError : Window
     {
